@@ -19,3 +19,9 @@ function createGrid(dimension) {
 }
 
 document.addEventListener("load", createGrid(16));
+
+squares = document.querySelectorAll(".square");
+squares.forEach(square => {
+    square.addEventListener("click", (event) => {
+        event.target.style.backgroundColor = "black"})
+});

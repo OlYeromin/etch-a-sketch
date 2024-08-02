@@ -1,28 +1,21 @@
 const GRIDSIZE = 400;
 const grid = document.querySelector("#grid");
 
-function appendSquare() {
+function appendSquare(parent) {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
-    grid.appendChild(square);
-}
-
-function setSize(elementsSelected, dimension) {
-    const elementSize = GRIDSIZE / dimension;
-    elementsSelected.forEach((element) => {
-        element.setAttribute("width", `${elementSize}px`);
-        element.setAttribute("height", `${elementSize}px`);
-    });
+    parent.appendChild(square);
 }
 
 function createGrid(dimension) {
     for (let i = 0; i < dimension; i++) {
+        const row = document.createElement("div");
+        row.setAttribute("class", "row");
         for (let j = 0; j < dimension; j++) {
-            appendSquare();
+            appendSquare(row);
         }
-    }
-    squares = document.querySelectorAll(".square");
-    setSize(squares, dimension);
+        grid.appendChild(row);
+    }   
 }
 
 document.addEventListener("load", createGrid(16));

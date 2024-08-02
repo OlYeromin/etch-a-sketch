@@ -10,11 +10,16 @@ body {
     height: 400px;
     margin-bottom: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.square {
-    border: gray 1px solid;
-    flex-shrink: 0;
+#grid .row {
+    display: flex;
+    flex: 1;
+}
+
+.row .square {
+    border: lightgray 1px solid;
+    flex: 1;
     box-sizing: border-box;
 }

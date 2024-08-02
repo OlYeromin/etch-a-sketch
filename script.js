@@ -9,8 +9,10 @@ function appendSquare() {
 
 function setSize(elementsSelected, dimension) {
     const elementSize = GRIDSIZE / dimension;
-    elementsSelected.setAttribute("width", `${elementSize}px`);
-    elementsSelected.setAttribute("height", `${elementSize}px`);
+    elementsSelected.forEach((element) => {
+        element.setAttribute("width", `${elementSize}px`);
+        element.setAttribute("height", `${elementSize}px`);
+    });
 }
 
 function createGrid(dimension) {

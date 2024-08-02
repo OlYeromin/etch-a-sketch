@@ -4,7 +4,7 @@ const grid = document.querySelector("#grid");
 function appendSquare() {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
-    grid.appendChild("square");
+    grid.appendChild(square);
 }
 
 function setSize(elementsSelected, dimension) {

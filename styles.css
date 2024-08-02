@@ -12,3 +12,9 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
+.square {
+    border: gray 1px solid;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}

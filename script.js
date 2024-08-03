@@ -19,6 +19,13 @@ function createGrid(dimension) {
     return document.querySelectorAll(".square");
 }
 
+function addHoverEffect(elements) {
+    elements.forEach(element => {
+        element.addEventListener("click", (event) => {
+            event.target.style.backgroundColor = "black"})
+    });
+}
+
 function removeGrid() {
     rows = document.querySelectorAll(".row");
     rows.forEach(row => {

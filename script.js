@@ -31,7 +31,7 @@ squares = document.querySelectorAll(".square");
 
 newGrid = document.querySelector("#newGrid");
 newGrid.addEventListener("click", function createNewGrid() {
-    const dimension = 4;//prompt("Set the dimension of the new grid", 16);
+    const dimension = prompt("Set the dimension of the new grid", 16);
     removeGrid();
     createGrid(dimension);
 })

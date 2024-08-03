@@ -20,6 +20,13 @@ function createGrid(dimension) {
 
 document.addEventListener("load", createGrid(16));
 
+newGrid = document.querySelector("#newGrid");
+newGrid.addEventListener("click", function createNewGrid() {
+    const dimension = prompt("Set the dimension of the new grid", 16);
+    removeGrid();
+    createGrid(dimension);
+})
+
 squares = document.querySelectorAll(".square");
 squares.forEach(square => {
     square.addEventListener("click", (event) => {

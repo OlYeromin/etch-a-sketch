@@ -15,7 +15,8 @@ function createGrid(dimension) {
             appendSquare(row);
         }
         grid.appendChild(row);
-    }   
+    }
+    return document.querySelectorAll(".square");
 }
 
 function removeGrid() {
@@ -25,15 +26,16 @@ function removeGrid() {
     })
 }
 
-document.addEventListener("load", createGrid(16));
+let squares;
 
-squares = document.querySelectorAll(".square");
+document.addEventListener("load", squares = createGrid(16));
+
 
 newGrid = document.querySelector("#newGrid");
 newGrid.addEventListener("click", function createNewGrid() {
     const dimension = prompt("Set the dimension of the new grid", 16);
     removeGrid();
-    createGrid(dimension);
+    squares = createGrid(dimension);
 })
 
 squares.forEach(square => {

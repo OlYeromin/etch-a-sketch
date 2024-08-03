@@ -36,16 +36,12 @@ function removeGrid() {
 let squares;
 
 document.addEventListener("load", squares = createGrid(16));
-
+addHoverEffect(squares);
 
 newGrid = document.querySelector("#newGrid");
 newGrid.addEventListener("click", function createNewGrid() {
     const dimension = prompt("Set the dimension of the new grid", 16);
     removeGrid();
     squares = createGrid(dimension);
+    addHoverEffect(squares);
 })
-
-squares.forEach(square => {
-    square.addEventListener("click", (event) => {
-        event.target.style.backgroundColor = "black"})
-});

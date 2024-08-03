@@ -1,4 +1,3 @@
-const GRIDSIZE = 400;
 const grid = document.querySelector("#grid");
 
 function appendSquare(parent) {

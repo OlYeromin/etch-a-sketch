@@ -19,21 +19,23 @@ function createGrid(dimension) {
 }
 
 function removeGrid() {
-    squares.forEach(square => {
-        square.remove();
+    rows = document.querySelectorAll(".row");
+    rows.forEach(row => {
+        row.remove();
     })
 }
 
 document.addEventListener("load", createGrid(16));
 
+squares = document.querySelectorAll(".square");
+
 newGrid = document.querySelector("#newGrid");
 newGrid.addEventListener("click", function createNewGrid() {
-    const dimension = prompt("Set the dimension of the new grid", 16);
+    const dimension = 4;//prompt("Set the dimension of the new grid", 16);
     removeGrid();
     createGrid(dimension);
 })
 
-squares = document.querySelectorAll(".square");
 squares.forEach(square => {
     square.addEventListener("click", (event) => {
         event.target.style.backgroundColor = "black"})

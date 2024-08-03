@@ -18,6 +18,12 @@ function createGrid(dimension) {
     }   
 }
 
+function removeGrid() {
+    squares.forEach(square => {
+        square.remove();
+    })
+}
+
 document.addEventListener("load", createGrid(16));
 
 newGrid = document.querySelector("#newGrid");

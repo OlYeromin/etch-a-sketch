@@ -57,7 +57,7 @@ function removeGrid() {
 function clearExistingGrid(elements) {
     elements.forEach((element) => {
         if (element.classList.contains("colored")) {
-            element.style.removeProperty = "";
+            element.style.opacity = "";
             element.classList.remove("colored");
         }
     });

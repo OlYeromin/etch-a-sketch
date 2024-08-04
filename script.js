@@ -22,7 +22,7 @@ function createGrid(dimension) {
 
 function colorSquare(target) {
     if (target.className != "square") return;
-    target.style.backgroundColor = "black"
+    target.classList.add("colored");
 }
 
 function addHoverEffect() {

@@ -23,3 +23,7 @@ body {
     flex: 1;
     box-sizing: border-box;
 }
+
+.square.colored {
+    background-color: black;
+}

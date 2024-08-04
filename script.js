@@ -1,10 +1,12 @@
 const grid = document.querySelector("#grid");
 
+isMouseDown = false;
+
 function appendSquare(parent) {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
     parent.appendChild(square);
-}
+};
 
 function createGrid(dimension) {
     for (let i = 0; i < dimension; i++) {
@@ -16,22 +18,33 @@ function createGrid(dimension) {
         grid.appendChild(row);
     }
     return document.querySelectorAll(".square");
-}
+};
 
 function addHoverEffect() {
-    grid.addEventListener("click", (event) => {
+    grid.addEventListener("mousedown", (event) => {
+        isMouseDown = true;
         let target = event.target;
         if (target.className != "square") return;
         target.style.backgroundColor = "black"
-    })
-    };
+    });
+    grid.addEventListener("mouseover", (event) => {
+        if (isMouseDown) {
+            let target = event.target;
+            if (target.className != "square") return;
+            target.style.backgroundColor = "black"
+        }
+    });
+    document.addEventListener("mouseup", (event) => {
+        isMouseDown = false;
+    });
+};
 
 function removeGrid() {
     rows = document.querySelectorAll(".row");
     rows.forEach(row => {
         row.remove();
     })
-}
+};
 
 let squares;
 

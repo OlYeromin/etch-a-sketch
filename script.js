@@ -22,7 +22,10 @@ function createGrid(dimension) {
 
 function colorSquare(target) {
     if (!target.classList.contains("square")) return;
-    target.classList.add("colored");
+    if (!target.classList.contains("colored")) {
+        target.classList.add("colored");
+        target.style.opacity = 0.1;
+    }
 }
 
 function addHoverEffect() {

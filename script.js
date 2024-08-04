@@ -20,18 +20,19 @@ function createGrid(dimension) {
     return document.querySelectorAll(".square");
 };
 
+function colorSquare(target) {
+    if (target.className != "square") return;
+    target.style.backgroundColor = "black"
+}
+
 function addHoverEffect() {
     grid.addEventListener("mousedown", (event) => {
         isMouseDown = true;
-        let target = event.target;
-        if (target.className != "square") return;
-        target.style.backgroundColor = "black"
+        colorSquare(event.target);
     });
     grid.addEventListener("mouseover", (event) => {
         if (isMouseDown) {
-            let target = event.target;
-            if (target.className != "square") return;
-            target.style.backgroundColor = "black"
+            colorSquare(event.target);
         }
     });
     document.addEventListener("mouseup", (event) => {

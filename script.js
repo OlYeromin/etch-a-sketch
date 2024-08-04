@@ -21,7 +21,7 @@ function createGrid(dimension) {
 };
 
 function colorSquare(target) {
-    if (target.className != "square") return;
+    if (!target.classList.contains("square")) return;
     target.classList.add("colored");
 }
 

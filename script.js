@@ -22,7 +22,11 @@ function createGrid(dimension) {
 
 function colorSquare(target) {
     if (!target.classList.contains("square")) return;
-    if (!target.classList.contains("colored")) {
+    if (target.classList.contains("colored")) {
+        let opacity = Number(target.style.opacity);
+        if (opacity < 1) target.style.opacity = (opacity*10 + 1)/10;
+    }
+    else {
         target.classList.add("colored");
         target.style.opacity = 0.1;
     }

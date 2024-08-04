@@ -77,5 +77,5 @@ newGrid.addEventListener("click", function createNewGrid() {
 
 clearGrid = document.querySelector("#clearGrid");
 clearGrid.addEventListener("click", () => {
-    clearExistingGrid(squares);
+    if (confirm("Are you sure you want to clear the grid?")) clearExistingGrid(squares);
 })

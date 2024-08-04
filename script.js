@@ -18,12 +18,13 @@ function createGrid(dimension) {
     return document.querySelectorAll(".square");
 }
 
-function addHoverEffect(elements) {
-    elements.forEach(element => {
-        element.addEventListener("click", (event) => {
-            event.target.style.backgroundColor = "black"})
-    });
-}
+function addHoverEffect() {
+    grid.addEventListener("click", (event) => {
+        let target = event.target;
+        if (target.className != "square") return;
+        target.style.backgroundColor = "black"
+    })
+    };
 
 function removeGrid() {
     rows = document.querySelectorAll(".row");
@@ -35,12 +36,11 @@ function removeGrid() {
 let squares;
 
 document.addEventListener("load", squares = createGrid(16));
-addHoverEffect(squares);
+addHoverEffect();
 
 newGrid = document.querySelector("#newGrid");
 newGrid.addEventListener("click", function createNewGrid() {
     const dimension = prompt("Set the dimension of the new grid", 16);
     removeGrid();
     squares = createGrid(dimension);
-    addHoverEffect(squares);
 })

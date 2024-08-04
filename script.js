@@ -54,6 +54,15 @@ function removeGrid() {
     })
 };
 
+function clearExistingGrid(elements) {
+    elements.forEach((element) => {
+        if (element.classList.contains("colored")) {
+            element.style.removeProperty = "";
+            element.classList.remove("colored");
+        }
+    });
+}
+
 let squares;
 
 document.addEventListener("load", squares = createGrid(16));
@@ -64,4 +73,9 @@ newGrid.addEventListener("click", function createNewGrid() {
     const dimension = prompt("Set the dimension of the new grid", 16);
     removeGrid();
     squares = createGrid(dimension);
+})
+
+clearGrid = document.querySelector("#clearGrid");
+clearGrid.addEventListener("click", () => {
+    clearExistingGrid(squares);
 })
